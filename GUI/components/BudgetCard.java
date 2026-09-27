@@ -1,0 +1,2 @@
+package GUI.components; import javafx.geometry.Insets; import javafx.scene.control.*; import javafx.scene.layout.VBox;
+public class BudgetCard extends VBox {public BudgetCard(String category,double used,double limit){setSpacing(7);setPadding(new Insets(12));getStyleClass().add("budget-card");Label name=new Label(category);Label value=new Label(String.format("৳%,.0f / ৳%,.0f",used,limit));ProgressBar bar=new ProgressBar(limit==0?0:Math.min(1,used/limit));bar.setMaxWidth(Double.MAX_VALUE);getChildren().addAll(name,value,bar);}}

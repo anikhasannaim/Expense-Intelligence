@@ -1,0 +1,9 @@
+package Program.utils;
+import java.io.IOException; import java.nio.charset.StandardCharsets; import java.nio.file.*; import java.util.*;
+/** Single persistence gateway; GUI classes never access text files. */
+public final class FileManager { private static final Path ROOT=Paths.get("File"); private FileManager(){}
+ public static void initialize(){try{Files.createDirectories(ROOT.resolve("reports"));for(String n:List.of("users.txt","expenses.txt","incomes.txt","budgets.txt","reports/monthly_reports.txt")){Path p=ROOT.resolve(n);if(!Files.exists(p))Files.createFile(p);}}catch(IOException e){throw new IllegalStateException("Cannot initialise storage",e);}}
+ public static List<String> read(String file){initialize();try{return Files.readAllLines(ROOT.resolve(file),StandardCharsets.UTF_8);}catch(IOException e){System.err.println(e.getMessage());return new ArrayList<>();}}
+ public static void write(String file,List<String> lines){initialize();try{Files.write(ROOT.resolve(file),lines,StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.TRUNCATE_EXISTING);}catch(IOException e){throw new IllegalStateException("Could not save data",e);}}
+ public static void append(String file,String line){initialize();try{Files.writeString(ROOT.resolve(file),line+System.lineSeparator(),StandardCharsets.UTF_8,StandardOpenOption.CREATE,StandardOpenOption.APPEND);}catch(IOException e){throw new IllegalStateException("Could not save data",e);}}
+ public static void update(String file,java.util.function.Predicate<String> match,String replacement){List<String> r=read(file);for(int i=0;i<r.size();i++)if(match.test(r.get(i))){r.set(i,replacement);break;}write(file,r);} public static void delete(String file,java.util.function.Predicate<String> match){List<String> r=read(file);r.removeIf(match);write(file,r);} public static String clean(String s){return s==null?"":s.replace("|","/").replace("\n"," ").replace("\r"," ").trim();}}

@@ -1,0 +1,17 @@
+GUI\DashboardUI.class
+GUI\BudgetRecommendationUI$1.class
+Program\service\TransactionService.class
+Program\model\Expense.class
+GUI\BudgetRecommendationUI$Row.class
+Program\model\Transaction.class
+GUI\BudgetUI.class
+GUI\AIIntelligenceUI.class
+GUI\MainUI.class
+Program\enums\UserRole.class
+Program\service\AuthService.class
+Program\model\Income.class
+Program\service\BudgetService.class
+GUI\BudgetUI$1.class
+GUI\BudgetRecommendationUI.class
+Program\model\User.class
+Program\model\Budget.class

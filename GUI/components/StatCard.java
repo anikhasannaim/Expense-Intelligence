@@ -1,0 +1,2 @@
+package GUI.components; import javafx.geometry.Insets; import javafx.scene.control.Label; import javafx.scene.layout.VBox;
+public class StatCard extends VBox {public StatCard(String label,String value,String color){setSpacing(8);setPadding(new Insets(18));getStyleClass().add("glass-card");Label a=new Label(label);a.getStyleClass().add("card-label");Label b=new Label(value);b.getStyleClass().add("stat-value");b.setStyle("-fx-text-fill:"+color+";");getChildren().addAll(a,b);}}

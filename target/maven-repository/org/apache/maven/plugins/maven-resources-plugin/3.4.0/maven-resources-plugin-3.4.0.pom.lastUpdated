@@ -1,0 +1,4 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Wed Aug 26 02:00:56 GMT+06:00 2026
+@default-central-https\://repo.maven.apache.org/maven2/.lastUpdated=1787688056950
+https\://repo.maven.apache.org/maven2/.error=Could not transfer artifact org.apache.maven.plugins\:maven-resources-plugin\:pom\:3.4.0 from/to central (https\://repo.maven.apache.org/maven2)\: (certificate_unknown) PKIX path building failed\: sun.security.provider.certpath.SunCertPathBuilderException\: unable to find valid certification path to requested target

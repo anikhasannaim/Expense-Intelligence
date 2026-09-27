@@ -1,0 +1,1 @@
+package Program.utils; import java.time.LocalDate; public final class DateUtils { private DateUtils(){} public static LocalDate firstDayOfMonth(){return LocalDate.now().withDayOfMonth(1);} public static LocalDate previousMonthStart(){return firstDayOfMonth().minusMonths(1);} public static LocalDate previousMonthEnd(){return firstDayOfMonth().minusDays(1);} }

@@ -1,0 +1,1 @@
+package Program.utils; import Program.model.User; public final class SessionManager {private static User user; private SessionManager(){} public static void login(User u){user=u;} public static User currentUser(){return user;} public static void logout(){user=null;}}
