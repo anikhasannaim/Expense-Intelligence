@@ -1,5 +1,3 @@
-Yes. The README can be made **much cleaner** by removing repeated explanations while keeping all important functionality. Here is the shortened full version.
-
 # Expense Intelligence
 
 **Expense Intelligence** is a JavaFX-based Smart Personal Finance Manager developed as a **CSE215 Object-Oriented Programming project**.
